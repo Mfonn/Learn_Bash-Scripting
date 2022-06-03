@@ -1,0 +1,88 @@
+Basic Linux Commands For Beginners
+
+Bash scripting is very useful especially in linux machines. It makes it easier to automate your workflows
+At the end of this article you will be able to run your very first bash script, create variables and use them, take input from the commandline and use as a varibale in the bash script, and finally you will be able to run if/else loops.
+
+To know which Bash you're in, 
+` which bash `
+
+To make a new bash file, `nano filename.sh`
+This command takes you inside the file.
+
+Nice to Note: All bash files end with `.sh` the same way javascript files end with `.js` and react files, `.jsx`
+
+in the bash file
+`#! /bin/bash `
+tells the program how to interprete the language we will be writing in.
+
+To create a variable, 
+` VARIABLE="variable content" `
+
+to call the variable 
+echo "This is an example of a $VARIABLE"
+
+There are a bunch of commands at the bottom of the file page. 
+To exit the file: 
+`Ctrl + x`
+
+- It will prompt you to save the modified buffer
+- Type Y to confirm
+
+- Type `Enter` to confirm your changes
+
+This command will take you out of the bash file
+
+To run the bash file:
+`bash filename.sh`
+
+If everything is right it will print out `This is an example of variable name`
+
+
+TO ADD VARIABLES FROM THE COMMAND LINE TO THE BASH SCRIPT
+In the bash script;
+- echo "Variables $1 $2 and $3 will be added from the command line"
+
+- Exit the bash file
+- On the commandline call the bash script file and add the variables the command i.e
+  `bash filename.sh "one" "two" "three"
+  
+ - If everything is right it will print out 
+  `Variables one two and three will be added from the command line`
+
+
+TO ECHO THE RESULT OF A COMMAND
+Enter the bash script `nano filename.sh` ; 
+- Type `echo $(whoami)`
+Nice To Know: The 'whoami' command types out the name of the user
+- exit the bash script `ctrl + X`
+- on the command line, call the bash script `bash filename.sh`
+- If everything is right, it will print out the name of your user
+
+TO TAKE IN AN INPUT FROM THE COMMANDLINE AND USE AS A VARIABLE IN A BASH SCRIPT
+Enter the bash script `nano filename`
+Type: `echo "What do you do for fun?" `
+      `read funthings`
+     Nice To Know: `read` means whatever the user types in will be used as the value of that variable.
+      `echo "$funthings are NOT fun" `
+      
+ - Exit the bash script
+ - run the bash script `bash filename.sh`
+ - If everything is right it will allow you take in and input and run the result using the input as a variable
+ 
+TO USE IF/ELSE STATEMENTS IN A BASH SCRIPT
+ Enter the bash script;
+ 
+ - `echo "what is your name" `
+ - `read yourname`
+ - ` if [ $yourname ]; then
+        echo "yourname is a nice name"
+     else
+        echo "I didn't like you anyways"
+     fi`
+
+- Always remember to end your loops with "fi" if not will have an error
+
+
+That's all for now. 
+You can now go out and duct tape you applications!
+
